@@ -25,12 +25,12 @@ class MediaController:
     #Stop button
     def stop(self):
         try:
-            self.player.pause()
-            self.media_player_is_playing()
-            self.player.stop()
-            self.player.release()
+            if self.player:
+                self.player.stop()
+                self.player.release()
+                self.player = None  # Reset player after release
         except Exception as e:
-            logger.error(f"Error stopping the video: {str(e)}")
+            logger.error(f"Error stopping media: {str(e)}")
     
     # Update the volume with the scale
     def volume_scale(self, volume):

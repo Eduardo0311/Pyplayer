@@ -313,7 +313,7 @@ class PyPlayer(customtkinter.CTk):
 
     # Methods related to the scale of the video duration
     
-    def _on_tick(self) -> int:
+    def _on_tick(self) -> None:
         """Gets and corrects the scale related to the duration of the current audio or video"""
         if self.media_manager.player:
             player = self.media_manager.player
